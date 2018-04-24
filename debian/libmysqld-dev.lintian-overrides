@@ -1,0 +1,2 @@
+# libmysqlclient-dev is part of this source package (and default-libmysqlclient-dev will not work for src:mysql-X.Y in Debian)
+depends-on-obsolete-package depends: libmysqlclient-dev (>= *) => default-libmysqlclient-dev
