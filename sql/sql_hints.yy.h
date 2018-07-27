@@ -1,19 +1,19 @@
-/* A Bison parser, made by GNU Bison 2.7.  */
+/* A Bison parser, made by GNU Bison 3.0.4.  */
 
 /* Bison interface for Yacc-like parsers in C
-   
-      Copyright (C) 1984, 1989-1990, 2000-2012 Free Software Foundation, Inc.
-   
+
+   Copyright (C) 1984, 1989-1990, 2000-2015 Free Software Foundation, Inc.
+
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation, either version 3 of the License, or
    (at your option) any later version.
-   
+
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-   
+
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
@@ -26,13 +26,13 @@
    special exception, which will cause the skeleton and the resulting
    Bison output files to be licensed under the GNU General Public
    License without this special exception.
-   
+
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-#ifndef YY_HINT_PARSER_EXPORT_HOME_PB2_BUILD_SB_3_27500156_1520170992_64_DIST_GPL_SQL_SQL_HINTS_YY_H_INCLUDED
-# define YY_HINT_PARSER_EXPORT_HOME_PB2_BUILD_SB_3_27500156_1520170992_64_DIST_GPL_SQL_SQL_HINTS_YY_H_INCLUDED
-/* Enabling traces.  */
+#ifndef YY_HINT_PARSER_EXPORT_HOME2_PB2_BUILD_SB_1_29015990_1528451851_72_DIST_GPL_SQL_SQL_HINTS_YY_H_INCLUDED
+# define YY_HINT_PARSER_EXPORT_HOME2_PB2_BUILD_SB_1_29015990_1528451851_72_DIST_GPL_SQL_SQL_HINTS_YY_H_INCLUDED
+/* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
 #endif
@@ -40,36 +40,35 @@
 extern int HINT_PARSER_debug;
 #endif
 
-/* Tokens.  */
+/* Token type.  */
 #ifndef YYTOKENTYPE
 # define YYTOKENTYPE
-   /* Put the tokens into the symbol table, so that GDB and other debuggers
-      know about them.  */
-   enum yytokentype {
-     MAX_EXECUTION_TIME_HINT = 258,
-     BKA_HINT = 259,
-     BNL_HINT = 260,
-     DUPSWEEDOUT_HINT = 261,
-     FIRSTMATCH_HINT = 262,
-     INTOEXISTS_HINT = 263,
-     LOOSESCAN_HINT = 264,
-     MATERIALIZATION_HINT = 265,
-     NO_BKA_HINT = 266,
-     NO_BNL_HINT = 267,
-     NO_ICP_HINT = 268,
-     NO_MRR_HINT = 269,
-     NO_RANGE_OPTIMIZATION_HINT = 270,
-     NO_SEMIJOIN_HINT = 271,
-     MRR_HINT = 272,
-     QB_NAME_HINT = 273,
-     SEMIJOIN_HINT = 274,
-     SUBQUERY_HINT = 275,
-     HINT_ARG_NUMBER = 276,
-     HINT_ARG_IDENT = 277,
-     HINT_ARG_QB_NAME = 278,
-     HINT_CLOSE = 279,
-     HINT_ERROR = 280
-   };
+  enum yytokentype
+  {
+    MAX_EXECUTION_TIME_HINT = 258,
+    BKA_HINT = 259,
+    BNL_HINT = 260,
+    DUPSWEEDOUT_HINT = 261,
+    FIRSTMATCH_HINT = 262,
+    INTOEXISTS_HINT = 263,
+    LOOSESCAN_HINT = 264,
+    MATERIALIZATION_HINT = 265,
+    NO_BKA_HINT = 266,
+    NO_BNL_HINT = 267,
+    NO_ICP_HINT = 268,
+    NO_MRR_HINT = 269,
+    NO_RANGE_OPTIMIZATION_HINT = 270,
+    NO_SEMIJOIN_HINT = 271,
+    MRR_HINT = 272,
+    QB_NAME_HINT = 273,
+    SEMIJOIN_HINT = 274,
+    SUBQUERY_HINT = 275,
+    HINT_ARG_NUMBER = 276,
+    HINT_ARG_IDENT = 277,
+    HINT_ARG_QB_NAME = 278,
+    HINT_CLOSE = 279,
+    HINT_ERROR = 280
+  };
 #endif
 /* Tokens.  */
 #define MAX_EXECUTION_TIME_HINT 258
@@ -96,27 +95,10 @@ extern int HINT_PARSER_debug;
 #define HINT_CLOSE 279
 #define HINT_ERROR 280
 
+/* Value type.  */
 
 
-#if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 
-# define yystype YYSTYPE /* obsolescent; will be withdrawn */
-# define YYSTYPE_IS_DECLARED 1
-#endif
-
-
-#ifdef YYPARSE_PARAM
-#if defined __STDC__ || defined __cplusplus
-int HINT_PARSER_parse (void *YYPARSE_PARAM);
-#else
-int HINT_PARSER_parse ();
-#endif
-#else /* ! YYPARSE_PARAM */
-#if defined __STDC__ || defined __cplusplus
 int HINT_PARSER_parse (class THD *thd, class Hint_scanner *scanner, class PT_hint_list **ret);
-#else
-int HINT_PARSER_parse ();
-#endif
-#endif /* ! YYPARSE_PARAM */
 
-#endif /* !YY_HINT_PARSER_EXPORT_HOME_PB2_BUILD_SB_3_27500156_1520170992_64_DIST_GPL_SQL_SQL_HINTS_YY_H_INCLUDED  */
+#endif /* !YY_HINT_PARSER_EXPORT_HOME2_PB2_BUILD_SB_1_29015990_1528451851_72_DIST_GPL_SQL_SQL_HINTS_YY_H_INCLUDED  */

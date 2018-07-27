@@ -1,3 +1,13 @@
+mysql-5.7 (5.7.23-0ubuntu0.18.04.1) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: Update to 5.7.23 to fix security issues
+    - CVE-2018-2767, CVE-2018-3054, CVE-2018-3056, CVE-2018-3058,
+      CVE-2018-3060, CVE-2018-3061, CVE-2018-3062, CVE-2018-3064,
+      CVE-2018-3065, CVE-2018-3066, CVE-2018-3070, CVE-2018-3071,
+      CVE-2018-3077, CVE-2018-3081
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Fri, 27 Jul 2018 10:28:00 -0400
+
 mysql-5.7 (5.7.22-0ubuntu18.04.1) bionic-security; urgency=medium
 
   * SECURITY UPDATE: Update to 5.7.22 to fix security issues
