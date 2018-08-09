@@ -1,4 +1,4 @@
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>2.4 Installing MySQL on macOS</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="osx-installation"></a>2.4 Installing MySQL on macOS</h2></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="#osx-installation-notes">2.4.1 General Notes on Installing MySQL on macOS</a></span></dt><dt><span class="section"><a href="#osx-installation-pkg">2.4.2 Installing MySQL on macOS Using Native Packages</a></span></dt><dt><span class="section"><a href="#osx-installation-launchd">2.4.3 Installing a MySQL Launch Daemon</a></span></dt><dt><span class="section"><a href="#osx-installation-prefpane">2.4.4 Installing and Using the MySQL Preference Pane</a></span></dt></dl></div><a class="indexterm" name="idm140429871339472"></a><a class="indexterm" name="idm140429871338016"></a><p>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>2.4 Installing MySQL on macOS</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="osx-installation"></a>2.4 Installing MySQL on macOS</h2></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="#osx-installation-notes">2.4.1 General Notes on Installing MySQL on macOS</a></span></dt><dt><span class="section"><a href="#osx-installation-pkg">2.4.2 Installing MySQL on macOS Using Native Packages</a></span></dt><dt><span class="section"><a href="#osx-installation-launchd">2.4.3 Installing a MySQL Launch Daemon</a></span></dt><dt><span class="section"><a href="#osx-installation-prefpane">2.4.4 Installing and Using the MySQL Preference Pane</a></span></dt></dl></div><a class="indexterm" name="idm140084183289488"></a><a class="indexterm" name="idm140084183288032"></a><p>
     For a list of macOS versions that the MySQL server supports, see
     <a class="ulink" href="http://www.mysql.com/support/supportedplatforms/database.html" target="_top">http://www.mysql.com/support/supportedplatforms/database.html</a>.
   </p><p>
@@ -105,9 +105,9 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
         </p><div class="figure"><a name="mac-installer-dmg-contents"></a><p class="title"><b>Figure 2.20 MySQL Package Installer: DMG Contents</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-dmg-contents.png" width="428" height="382" alt="Mounted macOS disk image contents that contains the MySQL Server package file."></div></div></div><br class="figure-break"></li><li class="listitem"><p>
           Double-click the MySQL installer package from the disk. It is
           named according to the version of MySQL you have downloaded.
-          For example, for MySQL server 5.7.23 it might be
+          For example, for MySQL server 5.7.24 it might be
           named
-          <code class="filename">mysql-5.7.23-osx-<em class="replaceable"><code>10.13-x86_64</code></em>.pkg</code>.
+          <code class="filename">mysql-5.7.24-osx-<em class="replaceable"><code>10.13-x86_64</code></em>.pkg</code>.
         </p></li><li class="listitem"><p>
           The initial wizard introduction screen references the MySQL
           server version to install. Click
@@ -156,13 +156,46 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
       installed into a directory within <code class="filename">/usr/local</code>
       matching the name of the installation version and platform. For
       example, the installer file
-      <code class="filename">mysql-5.7.23-<em class="replaceable"><code>osx10.13-x86_64.dmg</code></em></code>
+      <code class="filename">mysql-5.7.24-<em class="replaceable"><code>osx10.13-x86_64.dmg</code></em></code>
       installs MySQL into
-      <code class="filename">/usr/local/mysql-5.7.23-osx10.13-x86_64/
+      <code class="filename">/usr/local/mysql-5.7.24-osx10.13-x86_64/
       </code>. The following table shows the layout of the
       installation directory.
-    </p><div class="table"><a name="mysql-installation-layout-osx"></a><p class="title"><b>Table 2.6 MySQL Installation Layout on macOS</b></p><div class="table-contents"><table class="table" summary="MySQL Installation Layout on macOS" border="1"><colgroup><col><col></colgroup><thead><tr><th scope="col">Directory</th><th scope="col">Contents of Directory</th></tr></thead><tbody><tr><td scope="row"><code class="filename">bin</code></td><td><a class="link" href="#mysqld" title="4.3.1 mysqld — The MySQL Server"><span class="command"><strong>mysqld</strong></span></a> server, client and utility programs</td></tr><tr><td scope="row"><code class="filename">data</code></td><td>Log files, databases</td></tr><tr><td scope="row"><code class="filename">docs</code></td><td>Helper documents, like the Release Notes and build information</td></tr><tr><td scope="row"><code class="filename">include</code></td><td>Include (header) files</td></tr><tr><td scope="row"><code class="filename">lib</code></td><td>Libraries</td></tr><tr><td scope="row"><code class="filename">man</code></td><td>Unix manual pages</td></tr><tr><td scope="row"><code class="filename">mysql-test</code></td><td>MySQL test suite</td></tr><tr><td scope="row"><code class="filename">share</code></td><td>Miscellaneous support files, including error messages, sample
-              configuration files, SQL for database installation</td></tr><tr><td scope="row"><code class="filename">support-files</code></td><td>Scripts and sample configuration files</td></tr><tr><td scope="row"><code class="filename">/tmp/mysql.sock</code></td><td>Location of the MySQL Unix socket</td></tr></tbody></table></div></div><br class="table-break"><p>
+    </p><div class="table"><a name="mysql-installation-layout-osx"></a><p class="title"><b>Table 2.6 MySQL Installation Layout on macOS</b></p><div class="table-contents"><table><col width="45%"><col width="55%"><thead><tr>
+          <th scope="col">Directory</th>
+          <th scope="col">Contents of Directory</th>
+        </tr></thead><tbody><tr>
+          <td scope="row"><code class="filename">bin</code></td>
+          <td><a class="link" href="#mysqld" title="4.3.1 mysqld — The MySQL Server"><span class="command"><strong>mysqld</strong></span></a> server, client and utility programs</td>
+        </tr><tr>
+          <td scope="row"><code class="filename">data</code></td>
+          <td>Log files, databases</td>
+        </tr><tr>
+          <td scope="row"><code class="filename">docs</code></td>
+          <td>Helper documents, like the Release Notes and build information</td>
+        </tr><tr>
+          <td scope="row"><code class="filename">include</code></td>
+          <td>Include (header) files</td>
+        </tr><tr>
+          <td scope="row"><code class="filename">lib</code></td>
+          <td>Libraries</td>
+        </tr><tr>
+          <td scope="row"><code class="filename">man</code></td>
+          <td>Unix manual pages</td>
+        </tr><tr>
+          <td scope="row"><code class="filename">mysql-test</code></td>
+          <td>MySQL test suite</td>
+        </tr><tr>
+          <td scope="row"><code class="filename">share</code></td>
+          <td>Miscellaneous support files, including error messages, sample
+            configuration files, SQL for database installation</td>
+        </tr><tr>
+          <td scope="row"><code class="filename">support-files</code></td>
+          <td>Scripts and sample configuration files</td>
+        </tr><tr>
+          <td scope="row"><code class="filename">/tmp/mysql.sock</code></td>
+          <td>Location of the MySQL Unix socket</td>
+        </tr></tbody></table></div></div><br class="table-break"><p>
       During the package installer process, a symbolic link from
       <code class="filename">/usr/local/mysql</code> to the version/platform
       specific directory created during installation will be created
@@ -330,8 +363,8 @@ shell&gt; sudo launchctl load -w com.oracle.oss.mysql.mysqld.plist
       your MySQL server instance using the preference pane. To use the
       preference pane, open the <span class="guilabel">System
       Preferences...</span> from the Apple menu. Select the MySQL
-      preference pane by clicking the MySQL logo within the
-      <span class="guilabel">bottom</span> section of the preference panes list.
+      preference pane by clicking the MySQL icon within the preference
+      panes list.
     </p><div class="figure"><a name="mac-installer-preference-pane-location"></a><p class="title"><b>Figure 2.31 MySQL Preference Pane: Location</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-preference-pane-location.png" width="800" height="746" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"><div class="figure"><a name="mac-installer-preference-pane-usage-3"></a><p class="title"><b>Figure 2.32 MySQL Preference Pane: Usage</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-preference-pane-usage.png" width="780" height="426" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"><p>
       The MySQL Preference Pane shows the current status of the MySQL
       server, showing <span class="guilabel">stopped</span> (in red) if the
