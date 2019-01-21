@@ -1,3 +1,15 @@
+mysql-5.7 (5.7.25-0ubuntu0.18.04.2) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: Update to 5.7.25 to fix security issues
+    - CVE-2019-2420, CVE-2019-2434, CVE-2019-2455, CVE-2019-2481,
+      CVE-2019-2482, CVE-2019-2486, CVE-2019-2503, CVE-2019-2507,
+      CVE-2019-2510, CVE-2019-2528, CVE-2019-2529, CVE-2019-2531,
+      CVE-2019-2532, CVE-2019-2534, CVE-2019-2537
+  * debian/patches/fix-mysqldump-test-dates: bump mysqldump test date from
+    2018 to 2020 to fix failing test.
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Mon, 21 Jan 2019 13:25:52 -0500
+
 mysql-5.7 (5.7.24-0ubuntu0.18.04.1) bionic-security; urgency=medium
 
   * SECURITY UPDATE: Update to 5.7.24 to fix security issues

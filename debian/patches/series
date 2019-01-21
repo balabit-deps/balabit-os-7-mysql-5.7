@@ -3,3 +3,4 @@ mips64el.patch
 mysql-test-run-paths
 fix_grant_user_lock_as_root.patch
 disable_tests.patch
+fix-mysqldump-test-dates
