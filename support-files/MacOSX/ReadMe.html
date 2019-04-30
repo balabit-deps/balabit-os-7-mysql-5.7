@@ -1,4 +1,4 @@
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>2.4 Installing MySQL on macOS</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="osx-installation"></a>2.4 Installing MySQL on macOS</h2></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="#osx-installation-notes">2.4.1 General Notes on Installing MySQL on macOS</a></span></dt><dt><span class="section"><a href="#osx-installation-pkg">2.4.2 Installing MySQL on macOS Using Native Packages</a></span></dt><dt><span class="section"><a href="#osx-installation-launchd">2.4.3 Installing a MySQL Launch Daemon</a></span></dt><dt><span class="section"><a href="#osx-installation-prefpane">2.4.4 Installing and Using the MySQL Preference Pane</a></span></dt></dl></div><a class="indexterm" name="idm140331074901568"></a><a class="indexterm" name="idm140331074900112"></a><p>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>2.4 Installing MySQL on macOS</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="osx-installation"></a>2.4 Installing MySQL on macOS</h2></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="#osx-installation-notes">2.4.1 General Notes on Installing MySQL on macOS</a></span></dt><dt><span class="section"><a href="#osx-installation-pkg">2.4.2 Installing MySQL on macOS Using Native Packages</a></span></dt><dt><span class="section"><a href="#osx-installation-launchd">2.4.3 Installing a MySQL Launch Daemon</a></span></dt><dt><span class="section"><a href="#osx-installation-prefpane">2.4.4 Installing and Using the MySQL Preference Pane</a></span></dt></dl></div><a class="indexterm" name="idm140716916860960"></a><a class="indexterm" name="idm140716916859504"></a><p>
     For a list of macOS versions that the MySQL server supports, see
     <a class="ulink" href="https://www.mysql.com/support/supportedplatforms/database.html" target="_top">https://www.mysql.com/support/supportedplatforms/database.html</a>.
   </p><p>
@@ -30,6 +30,18 @@
   </p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="osx-installation-notes"></a>2.4.1 General Notes on Installing MySQL on macOS</h3></div></div></div><p>
       You should keep the following issues and notes in mind:
     </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+          As of macOS 10.14 (Majave), the macOS MySQL 5.7 Installer
+          application requires permission to control <span class="emphasis"><em>System
+          Events</em></span> so it can display a generated (temporary)
+          MySQL root password. Choosing "Don't Allow" means this
+          password won't be visible for use.
+        </p><p>
+          If previously disallowed, the fix is enabling <span class="emphasis"><em>System
+          Events.app</em></span> for <span class="emphasis"><em>Installer.app</em></span>
+          under the <span class="emphasis"><em>Security &amp; Privacy</em></span> |
+          <span class="emphasis"><em>Automation</em></span> | <span class="emphasis"><em>Privacy</em></span>
+          tab.
+        </p></li><li class="listitem"><p>
           A launchd daemon is installed, and it includes MySQL
           configuration options. Consider editing it if needed, see the
           documentation below for additional information. Also, macOS
@@ -102,17 +114,17 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
           <a class="ulink" href="https://dev.mysql.com/downloads/mysql/" target="_top">here</a>) that
           contains the MySQL package installer. Double-click the file to
           mount the disk image and see its contents.
-        </p><div class="figure"><a name="mac-installer-dmg-contents"></a><p class="title"><b>Figure 2.20 MySQL Package Installer: DMG Contents</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-dmg-contents.png" width="428" height="382" alt="Mounted macOS disk image contents that contains the MySQL Server package file."></div></div></div><br class="figure-break"></li><li class="listitem"><p>
+        </p><div class="figure"><a name="mac-installer-dmg-contents"></a><p class="title"><b>Figure 2.19 MySQL Package Installer: DMG Contents</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-dmg-contents.png" width="428" height="382" alt="Mounted macOS disk image contents that contains the MySQL Server package file."></div></div></div><br class="figure-break"></li><li class="listitem"><p>
           Double-click the MySQL installer package from the disk. It is
           named according to the version of MySQL you have downloaded.
-          For example, for MySQL server 5.7.26 it might be
+          For example, for MySQL server 5.7.27 it might be
           named
-          <code class="filename">mysql-5.7.26-osx-<em class="replaceable"><code>10.13-x86_64</code></em>.pkg</code>.
+          <code class="filename">mysql-5.7.27-osx-<em class="replaceable"><code>10.13-x86_64</code></em>.pkg</code>.
         </p></li><li class="listitem"><p>
           The initial wizard introduction screen references the MySQL
           server version to install. Click
           <span class="guibutton">Continue</span> to begin the installation.
-        </p><div class="figure"><a name="mac-installer-dmg-introduction"></a><p class="title"><b>Figure 2.21 MySQL Package Installer Wizard: Introduction</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-dmg-introduction.png" width="732" height="550" alt="Shows that the installation is ready to start, the MySQL server version being installed, and includes links to the MySQL manual, mysql.com, and oracle.com."></div></div></div><br class="figure-break"></li><li class="listitem"><p>
+        </p><div class="figure"><a name="mac-installer-dmg-introduction"></a><p class="title"><b>Figure 2.20 MySQL Package Installer Wizard: Introduction</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-dmg-introduction.png" width="732" height="550" alt="Shows that the installation is ready to start, the MySQL server version being installed, and includes links to the MySQL manual, mysql.com, and oracle.com."></div></div></div><br class="figure-break"></li><li class="listitem"><p>
           The MySQL community edition shows a copy of the relevant GNU
           General Public License. Click <span class="guibutton">Continue</span>
           and then <span class="guibutton">Agree</span> to continue.
@@ -127,7 +139,7 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
             Although the <span class="guibutton">Change Install Location</span>
             option is visible, the installation location cannot be
             changed.
-          </p></div><div class="figure"><a name="mac-installer-installation-type-main"></a><p class="title"><b>Figure 2.22 MySQL Package Installer Wizard: Installation Type</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-installation-type.png" width="732" height="550" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"><div class="figure"><a name="mac-installer-installation-customize-main"></a><p class="title"><b>Figure 2.23 MySQL Package Installer Wizard: Customize</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-installation-customize.png" width="732" height="550" alt="Customize shows three package name options: MySQL Server, Preference Pane, and Launchd Support. All three options are checked."></div></div></div><br class="figure-break"></li><li class="listitem"><p>
+          </p></div><div class="figure"><a name="mac-installer-installation-type-main"></a><p class="title"><b>Figure 2.21 MySQL Package Installer Wizard: Installation Type</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-installation-type.png" width="732" height="550" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"><div class="figure"><a name="mac-installer-installation-customize-main"></a><p class="title"><b>Figure 2.22 MySQL Package Installer Wizard: Customize</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-installation-customize.png" width="732" height="550" alt="Customize shows three package name options: MySQL Server, Preference Pane, and Launchd Support. All three options are checked."></div></div></div><br class="figure-break"></li><li class="listitem"><p>
           Click <span class="guibutton">Install</span> to begin the installation
           process.
         </p></li><li class="listitem"><p>
@@ -135,14 +147,14 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
           window with your temporary root password. This cannot be
           recovered so you must save this password for the initial login
           to MySQL. For example:
-        </p><div class="figure"><a name="mac-installer-installation-root-password"></a><p class="title"><b>Figure 2.24 MySQL Package Installer Wizard: Temporary Root Password</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-root-password.png" width="600" height="316" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><div class="admon-title">Note</div><p>
+        </p><div class="figure"><a name="mac-installer-installation-root-password"></a><p class="title"><b>Figure 2.23 MySQL Package Installer Wizard: Temporary Root Password</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-root-password.png" width="600" height="316" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><div class="admon-title">Note</div><p>
             MySQL expires this temporary root password after the initial
             login and requires you to create a new password.
           </p></div></li><li class="listitem"><p>
           <span class="guilabel">Summary</span> is the final step and references
           a successful and complete MySQL Server installation.
           <span class="guibutton">Close</span> the wizard.
-        </p><div class="figure"><a name="mac-installer-installation-summary"></a><p class="title"><b>Figure 2.25 MySQL Package Installer Wizard: Summary</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-summary.png" width="732" height="550" alt="Shows that the installation was a success, and includes links to the MySQL manual, mysql.com, and oracle.com."></div></div></div><br class="figure-break"></li></ol></div><p>
+        </p><div class="figure"><a name="mac-installer-installation-summary"></a><p class="title"><b>Figure 2.24 MySQL Package Installer Wizard: Summary</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-summary.png" width="732" height="550" alt="Shows that the installation was a success, and includes links to the MySQL manual, mysql.com, and oracle.com."></div></div></div><br class="figure-break"></li></ol></div><p>
       MySQL server is now installed, but it is not loaded (or started)
       by default. Use either launchctl from the command line, or start
       MySQL by clicking "Start" using the MySQL preference pane. For
@@ -156,9 +168,9 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
       installed into a directory within <code class="filename">/usr/local</code>
       matching the name of the installation version and platform. For
       example, the installer file
-      <code class="filename">mysql-5.7.26-<em class="replaceable"><code>osx10.13-x86_64.dmg</code></em></code>
+      <code class="filename">mysql-5.7.27-<em class="replaceable"><code>osx10.13-x86_64.dmg</code></em></code>
       installs MySQL into
-      <code class="filename">/usr/local/mysql-5.7.26-osx10.13-x86_64/
+      <code class="filename">/usr/local/mysql-5.7.27-osx10.13-x86_64/
       </code>. The following table shows the layout of the
       installation directory.
     </p><div class="table"><a name="mysql-installation-layout-osx"></a><p class="title"><b>Table 2.6 MySQL Installation Layout on macOS</b></p><div class="table-contents"><table><col width="45%"><col width="55%"><thead><tr>
@@ -250,7 +262,7 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
     </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
           Click <span class="guibutton">Start MySQL Server</span> from the MySQL
           preference pane.
-        </p><div class="figure"><a name="mac-installer-preference-pane-location-start"></a><p class="title"><b>Figure 2.26 MySQL Preference Pane: Location</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-preference-pane-location.png" width="800" height="746" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"><div class="figure"><a name="mac-installer-preference-pane-usage"></a><p class="title"><b>Figure 2.27 MySQL Preference Pane: Usage</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-preference-pane-usage.png" width="780" height="426" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"></li><li class="listitem"><p>
+        </p><div class="figure"><a name="mac-installer-preference-pane-location-start"></a><p class="title"><b>Figure 2.25 MySQL Preference Pane: Location</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-preference-pane-location.png" width="800" height="746" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"><div class="figure"><a name="mac-installer-preference-pane-usage"></a><p class="title"><b>Figure 2.26 MySQL Preference Pane: Usage</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-preference-pane-usage.png" width="780" height="426" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"></li><li class="listitem"><p>
           Or, manually load the launchd file.
         </p><pre data-lang="terminal" class="programlisting">
 shell&gt; cd /Library/LaunchDaemons
@@ -335,7 +347,7 @@ shell&gt; sudo launchctl load -w com.oracle.oss.mysql.mysqld.plist
     </p><p>
       This preference pane is installed by default, and is listed under
       your system's <span class="emphasis"><em>System Preferences</em></span> window.
-    </p><div class="figure"><a name="mac-installer-preference-pane-location-start-2"></a><p class="title"><b>Figure 2.28 MySQL Preference Pane: Location</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-preference-pane-location.png" width="800" height="746" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"><p>
+    </p><div class="figure"><a name="mac-installer-preference-pane-location-start-2"></a><p class="title"><b>Figure 2.27 MySQL Preference Pane: Location</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-preference-pane-location.png" width="800" height="746" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"><p>
       To install the MySQL Preference Pane:
     </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
           Download the disk image (<code class="filename">.dmg</code>) file (the
@@ -343,7 +355,7 @@ shell&gt; sudo launchctl load -w com.oracle.oss.mysql.mysqld.plist
           <a class="ulink" href="https://dev.mysql.com/downloads/mysql/" target="_top">here</a>) that
           contains the MySQL package installer. Double-click the file to
           mount the disk image and see its contents.
-        </p><div class="figure"><a name="mac-installer-dmg-contents-prefpane"></a><p class="title"><b>Figure 2.29 MySQL Package Installer: DMG Contents</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-dmg-contents.png" width="428" height="382" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"></li><li class="listitem"><p>
+        </p><div class="figure"><a name="mac-installer-dmg-contents-prefpane"></a><p class="title"><b>Figure 2.28 MySQL Package Installer: DMG Contents</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-dmg-contents.png" width="428" height="382" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"></li><li class="listitem"><p>
           Go through the process of installing the MySQL server, as
           described in the documentation at
           <a class="xref" href="#osx-installation-pkg" title="2.4.2 Installing MySQL on macOS Using Native Packages">Section 2.4.2, “Installing MySQL on macOS Using Native Packages”</a>.
@@ -352,7 +364,7 @@ shell&gt; sudo launchctl load -w com.oracle.oss.mysql.mysqld.plist
           <span class="guilabel">Installation Type</span> step. The "Preference
           Pane" option is listed there and enabled by default; make sure
           it is not deselected.
-        </p><div class="figure"><a name="mac-startup-installer-customize-prefpane"></a><p class="title"><b>Figure 2.30 MySQL Installer on macOS: Customize</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-installation-customize.png" width="732" height="550" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"></li><li class="listitem"><p>
+        </p><div class="figure"><a name="mac-startup-installer-customize-prefpane"></a><p class="title"><b>Figure 2.29 MySQL Installer on macOS: Customize</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-installation-customize.png" width="732" height="550" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"></li><li class="listitem"><p>
           Complete the MySQL server installation process.
         </p></li></ol></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><div class="admon-title">Note</div><p>
         The MySQL preference pane only starts and stops MySQL
@@ -365,7 +377,7 @@ shell&gt; sudo launchctl load -w com.oracle.oss.mysql.mysqld.plist
       Preferences...</span> from the Apple menu. Select the MySQL
       preference pane by clicking the MySQL icon within the preference
       panes list.
-    </p><div class="figure"><a name="mac-installer-preference-pane-location"></a><p class="title"><b>Figure 2.31 MySQL Preference Pane: Location</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-preference-pane-location.png" width="800" height="746" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"><div class="figure"><a name="mac-installer-preference-pane-usage-3"></a><p class="title"><b>Figure 2.32 MySQL Preference Pane: Usage</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-preference-pane-usage.png" width="780" height="426" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"><p>
+    </p><div class="figure"><a name="mac-installer-preference-pane-location"></a><p class="title"><b>Figure 2.30 MySQL Preference Pane: Location</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-preference-pane-location.png" width="800" height="746" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"><div class="figure"><a name="mac-installer-preference-pane-usage-3"></a><p class="title"><b>Figure 2.31 MySQL Preference Pane: Usage</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-preference-pane-usage.png" width="780" height="426" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"><p>
       The MySQL Preference Pane shows the current status of the MySQL
       server, showing <span class="guilabel">stopped</span> (in red) if the
       server is not running and <span class="guilabel">running</span> (in green)
