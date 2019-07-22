@@ -1,4 +1,4 @@
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>2.4 Installing MySQL on macOS</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="osx-installation"></a>2.4 Installing MySQL on macOS</h2></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="#osx-installation-notes">2.4.1 General Notes on Installing MySQL on macOS</a></span></dt><dt><span class="section"><a href="#osx-installation-pkg">2.4.2 Installing MySQL on macOS Using Native Packages</a></span></dt><dt><span class="section"><a href="#osx-installation-launchd">2.4.3 Installing a MySQL Launch Daemon</a></span></dt><dt><span class="section"><a href="#osx-installation-prefpane">2.4.4 Installing and Using the MySQL Preference Pane</a></span></dt></dl></div><a class="indexterm" name="idm140716916860960"></a><a class="indexterm" name="idm140716916859504"></a><p>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>2.4 Installing MySQL on macOS</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="osx-installation"></a>2.4 Installing MySQL on macOS</h2></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="#osx-installation-notes">2.4.1 General Notes on Installing MySQL on macOS</a></span></dt><dt><span class="section"><a href="#osx-installation-pkg">2.4.2 Installing MySQL on macOS Using Native Packages</a></span></dt><dt><span class="section"><a href="#osx-installation-launchd">2.4.3 Installing a MySQL Launch Daemon</a></span></dt><dt><span class="section"><a href="#osx-installation-prefpane">2.4.4 Installing and Using the MySQL Preference Pane</a></span></dt></dl></div><a class="indexterm" name="idm139880410066048"></a><a class="indexterm" name="idm139880410064592"></a><p>
     For a list of macOS versions that the MySQL server supports, see
     <a class="ulink" href="https://www.mysql.com/support/supportedplatforms/database.html" target="_top">https://www.mysql.com/support/supportedplatforms/database.html</a>.
   </p><p>
@@ -117,9 +117,9 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
         </p><div class="figure"><a name="mac-installer-dmg-contents"></a><p class="title"><b>Figure 2.19 MySQL Package Installer: DMG Contents</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-dmg-contents.png" width="428" height="382" alt="Mounted macOS disk image contents that contains the MySQL Server package file."></div></div></div><br class="figure-break"></li><li class="listitem"><p>
           Double-click the MySQL installer package from the disk. It is
           named according to the version of MySQL you have downloaded.
-          For example, for MySQL server 5.7.27 it might be
+          For example, for MySQL server 5.7.28 it might be
           named
-          <code class="filename">mysql-5.7.27-osx-<em class="replaceable"><code>10.13-x86_64</code></em>.pkg</code>.
+          <code class="filename">mysql-5.7.28-osx-<em class="replaceable"><code>10.13-x86_64</code></em>.pkg</code>.
         </p></li><li class="listitem"><p>
           The initial wizard introduction screen references the MySQL
           server version to install. Click
@@ -168,9 +168,9 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
       installed into a directory within <code class="filename">/usr/local</code>
       matching the name of the installation version and platform. For
       example, the installer file
-      <code class="filename">mysql-5.7.27-<em class="replaceable"><code>osx10.13-x86_64.dmg</code></em></code>
+      <code class="filename">mysql-5.7.28-<em class="replaceable"><code>osx10.13-x86_64.dmg</code></em></code>
       installs MySQL into
-      <code class="filename">/usr/local/mysql-5.7.27-osx10.13-x86_64/
+      <code class="filename">/usr/local/mysql-5.7.28-osx10.13-x86_64/
       </code>. The following table shows the layout of the
       installation directory.
     </p><div class="table"><a name="mysql-installation-layout-osx"></a><p class="title"><b>Table 2.6 MySQL Installation Layout on macOS</b></p><div class="table-contents"><table><col width="45%"><col width="55%"><thead><tr>
@@ -284,7 +284,7 @@ shell&gt; sudo launchctl load -w com.oracle.oss.mysql.mysqld.plist
           The plist entries override <code class="filename">my.cnf</code>
           entries, because they are passed in as command line arguments.
           For additional information about passing in program options,
-          see <a class="xref" href="#program-options" title="4.2.3 Specifying Program Options">Section 4.2.3, “Specifying Program Options”</a>.
+          see <a class="xref" href="#program-options" title="4.2.2 Specifying Program Options">Section 4.2.2, “Specifying Program Options”</a>.
         </p></li><li class="listitem"><p>
           The <span class="bold"><strong>ProgramArguments</strong></span> section
           defines the command line options that are passed into the

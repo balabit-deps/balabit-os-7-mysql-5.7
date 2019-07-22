@@ -1,3 +1,13 @@
+mysql-5.7 (5.7.27-0ubuntu0.18.04.1) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: Update to 5.7.27 to fix security issues
+    - CVE-2019-2737, CVE-2019-2738, CVE-2019-2739, CVE-2019-2740,
+      CVE-2019-2741, CVE-2019-2757, CVE-2019-2758, CVE-2019-2774,
+      CVE-2019-2778, CVE-2019-2791, CVE-2019-2797, CVE-2019-2805,
+      CVE-2019-2819
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Mon, 22 Jul 2019 14:02:12 -0400
+
 mysql-5.7 (5.7.26-0ubuntu0.18.04.1) bionic-security; urgency=medium
 
   * SECURITY UPDATE: Update to 5.7.26 to fix security issues
