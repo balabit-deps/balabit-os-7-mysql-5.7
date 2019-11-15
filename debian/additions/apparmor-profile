@@ -10,9 +10,13 @@
   #include <abstractions/winbind>
 
 # Allow system resource access
+  /proc/*/status r,
   /sys/devices/system/cpu/ r,
+  /sys/devices/system/node/ r,
+  /sys/devices/system/node/** r,
   capability sys_resource,
   capability dac_override,
+  capability dac_read_search,
   capability setuid,
   capability setgid,
 
@@ -32,6 +36,9 @@
   /run/mysqld/mysqld.pid rw,
   /run/mysqld/mysqld.sock rw,
   /run/mysqld/mysqld.sock.lock rw,
+
+# Allow systemd notify messages
+  /{,var/}run/systemd/notify w,
 
 # Allow execution of server binary
   /usr/sbin/mysqld mr,
@@ -63,6 +70,8 @@
   /var/log/mysql/ r,
   /var/log/mysql/** rw,
 
+# Allow read access to OpenSSL config
+  /etc/ssl/openssl.cnf r,
   # Site-specific additions and overrides. See local/README for details.
   #include <local/usr.sbin.mysqld>
 }

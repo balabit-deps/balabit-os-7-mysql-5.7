@@ -1,3 +1,19 @@
+mysql-5.7 (5.7.28-0ubuntu0.18.04.4) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: Update to 5.7.28 to fix security issues
+    - CVE-2019-2910, CVE-2019-2911, CVE-2019-2914, CVE-2019-2922,
+      CVE-2019-2923, CVE-2019-2924, CVE-2019-2938, CVE-2019-2946,
+      CVE-2019-2948, CVE-2019-2960, CVE-2019-2969, CVE-2019-2974,
+      CVE-2019-2993
+  * Removed patches no longer required:
+    - debian/patches/mips64el.patch
+  * debian/rules: removed -DWITH_SSL=bundled, option no longer works.
+  * debian/control: add libssl-dev to Build-Depends.
+  * d/additions/apparmor-profile: add missing AppArmor rules
+    (LP: #1658233).
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Fri, 15 Nov 2019 08:23:09 -0500
+
 mysql-5.7 (5.7.27-0ubuntu0.18.04.1) bionic-security; urgency=medium
 
   * SECURITY UPDATE: Update to 5.7.27 to fix security issues
