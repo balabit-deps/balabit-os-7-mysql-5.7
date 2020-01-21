@@ -1,3 +1,17 @@
+mysql-5.7 (5.7.29-0ubuntu0.18.04.1) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: Update to 5.7.29 to fix security issues
+    - CVE-2020-2570, CVE-2020-2572, CVE-2020-2573, CVE-2020-2574,
+      CVE-2020-2577, CVE-2020-2579, CVE-2020-2584, CVE-2020-2589,
+      CVE-2020-2660
+  * debian/control: added libssl-dev Depends to libmysqlclient-dev. Since
+    the previous update switched to building with OpenSSL, some packages
+    were failing to build because of the missing dependency.
+  * debian/patches/year2020.patch: fixed FTBFS by changing future date to
+    2037.
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Tue, 21 Jan 2020 09:10:07 -0500
+
 mysql-5.7 (5.7.28-0ubuntu0.18.04.4) bionic-security; urgency=medium
 
   * SECURITY UPDATE: Update to 5.7.28 to fix security issues

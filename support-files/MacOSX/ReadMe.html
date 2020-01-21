@@ -1,4 +1,4 @@
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>2.4 Installing MySQL on macOS</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="osx-installation"></a>2.4 Installing MySQL on macOS</h2></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="#osx-installation-notes">2.4.1 General Notes on Installing MySQL on macOS</a></span></dt><dt><span class="section"><a href="#osx-installation-pkg">2.4.2 Installing MySQL on macOS Using Native Packages</a></span></dt><dt><span class="section"><a href="#osx-installation-launchd">2.4.3 Installing a MySQL Launch Daemon</a></span></dt><dt><span class="section"><a href="#osx-installation-prefpane">2.4.4 Installing and Using the MySQL Preference Pane</a></span></dt></dl></div><a class="indexterm" name="idm140065520292464"></a><a class="indexterm" name="idm140065520291008"></a><p>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>2.4 Installing MySQL on macOS</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="osx-installation"></a>2.4 Installing MySQL on macOS</h2></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="#osx-installation-notes">2.4.1 General Notes on Installing MySQL on macOS</a></span></dt><dt><span class="section"><a href="#osx-installation-pkg">2.4.2 Installing MySQL on macOS Using Native Packages</a></span></dt><dt><span class="section"><a href="#osx-installation-launchd">2.4.3 Installing a MySQL Launch Daemon</a></span></dt><dt><span class="section"><a href="#osx-installation-prefpane">2.4.4 Installing and Using the MySQL Preference Pane</a></span></dt></dl></div><a class="indexterm" name="idm45518009391552"></a><a class="indexterm" name="idm45518009390096"></a><p>
     For a list of macOS versions that the MySQL server supports, see
     <a class="ulink" href="https://www.mysql.com/support/supportedplatforms/database.html" target="_top">https://www.mysql.com/support/supportedplatforms/database.html</a>.
   </p><p>
@@ -74,15 +74,11 @@
           <a class="link" href="#mysql" title="4.5.1 mysql — The MySQL Command-Line Client"><span class="command"><strong>mysql</strong></span></a> and <a class="link" href="#mysqladmin" title="4.5.2 mysqladmin — Client for Administering a MySQL Server"><span class="command"><strong>mysqladmin</strong></span></a>
           from the command line. The syntax for <span class="command"><strong>bash</strong></span>
           is:
-        </p><pre data-lang="terminal" class="programlisting">
-alias mysql=/usr/local/mysql/bin/mysql
-alias mysqladmin=/usr/local/mysql/bin/mysqladmin
-</pre><p>
+        </p><pre data-lang="terminal" class="programlisting">alias mysql=/usr/local/mysql/bin/mysql
+alias mysqladmin=/usr/local/mysql/bin/mysqladmin</pre><p>
           For <span class="command"><strong>tcsh</strong></span>, use:
-        </p><pre data-lang="terminal" class="programlisting">
-alias mysql /usr/local/mysql/bin/mysql
-alias mysqladmin /usr/local/mysql/bin/mysqladmin
-</pre><p>
+        </p><pre data-lang="terminal" class="programlisting">alias mysql /usr/local/mysql/bin/mysql
+alias mysqladmin /usr/local/mysql/bin/mysqladmin</pre><p>
           Even better, add <code class="literal">/usr/local/mysql/bin</code> to
           your <code class="literal">PATH</code> environment variable. You can do
           this by modifying the appropriate startup file for your shell.
@@ -117,9 +113,9 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
         </p><div class="figure"><a name="mac-installer-dmg-contents"></a><p class="title"><b>Figure 2.13 MySQL Package Installer: DMG Contents</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-dmg-contents.png" width="428" height="382" alt="Mounted macOS disk image contents that contains the MySQL Server package file."></div></div></div><br class="figure-break"></li><li class="listitem"><p>
           Double-click the MySQL installer package from the disk. It is
           named according to the version of MySQL you have downloaded.
-          For example, for MySQL server 5.7.29 it might be
+          For example, for MySQL server 5.7.30 it might be
           named
-          <code class="filename">mysql-5.7.29-osx-<em class="replaceable"><code>10.13-x86_64</code></em>.pkg</code>.
+          <code class="filename">mysql-5.7.30-osx-<em class="replaceable"><code>10.13-x86_64</code></em>.pkg</code>.
         </p></li><li class="listitem"><p>
           The initial wizard introduction screen references the MySQL
           server version to install. Click
@@ -168,9 +164,9 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
       installed into a directory within <code class="filename">/usr/local</code>
       matching the name of the installation version and platform. For
       example, the installer file
-      <code class="filename">mysql-5.7.29-<em class="replaceable"><code>osx10.13-x86_64.dmg</code></em></code>
+      <code class="filename">mysql-5.7.30-<em class="replaceable"><code>osx10.13-x86_64.dmg</code></em></code>
       installs MySQL into
-      <code class="filename">/usr/local/mysql-5.7.29-osx10.13-x86_64/
+      <code class="filename">/usr/local/mysql-5.7.30-osx10.13-x86_64/
       </code>. The following table shows the layout of the
       installation directory.
     </p><div class="table"><a name="mysql-installation-layout-osx"></a><p class="title"><b>Table 2.6 MySQL Installation Layout on macOS</b></p><div class="table-contents"><table><col width="45%"><col width="55%"><thead><tr>
@@ -221,7 +217,6 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
       <code class="filename">/Library/LaunchDaemons/com.oracle.oss.mysql.mysqld.plist</code>
       that contains a plist definition similar to:
     </p><pre data-lang="terminal" class="programlisting">
-
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
 &lt;plist version="1.0"&gt;
@@ -264,14 +259,11 @@ alias mysqladmin /usr/local/mysql/bin/mysqladmin
           preference pane.
         </p><div class="figure"><a name="mac-installer-preference-pane-location-start"></a><p class="title"><b>Figure 2.19 MySQL Preference Pane: Location</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-preference-pane-location.png" width="800" height="746" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"><div class="figure"><a name="mac-installer-preference-pane-usage"></a><p class="title"><b>Figure 2.20 MySQL Preference Pane: Usage</b></p><div class="figure-contents"><div class="mediaobject"><img src="../refman-common/images/published/mac-installer-preference-pane-usage.png" width="780" height="426" alt="Content is described in the surrounding text."></div></div></div><br class="figure-break"></li><li class="listitem"><p>
           Or, manually load the launchd file.
-        </p><pre data-lang="terminal" class="programlisting">
-shell&gt; cd /Library/LaunchDaemons
+        </p><pre data-lang="terminal" class="programlisting">shell&gt; cd /Library/LaunchDaemons
 shell&gt; sudo launchctl load -F com.oracle.oss.mysql.mysqld.plist
         </pre></li><li class="listitem"><p>
           To configure MySQL to automatically start at bootup, you can:
-        </p><pre data-lang="terminal" class="programlisting">
-shell&gt; sudo launchctl load -w com.oracle.oss.mysql.mysqld.plist
-</pre></li></ul></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><div class="admon-title">Note</div><p>
+        </p><pre data-lang="terminal" class="programlisting">shell&gt; sudo launchctl load -w com.oracle.oss.mysql.mysqld.plist</pre></li></ul></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><div class="admon-title">Note</div><p>
         When upgrading MySQL server, the launchd installation process
         will remove the old startup items that were installed with MySQL
         server 5.7.7 and below.
@@ -307,7 +299,6 @@ shell&gt; sudo launchctl load -w com.oracle.oss.mysql.mysqld.plist
       <code class="filename">my.cnf</code> MySQL configuration file to define
       them. For example:
     </p><pre data-lang="terminal" class="programlisting">
-
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
 &lt;plist version="1.0"&gt;
