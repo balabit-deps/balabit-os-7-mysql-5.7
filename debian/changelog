@@ -1,3 +1,12 @@
+mysql-5.7 (5.7.30-0ubuntu0.18.04.1) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: Update to 5.7.30 to fix security issues
+    - CVE-2020-2760, CVE-2020-2763, CVE-2020-2765, CVE-2020-2780,
+      CVE-2020-2804, CVE-2020-2812, CVE-2020-2922
+  * debian/patches/year2020.patch: Dropped, no longer needed
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 29 Apr 2020 12:40:39 -0400
+
 mysql-5.7 (5.7.29-0ubuntu0.18.04.1) bionic-security; urgency=medium
 
   * SECURITY UPDATE: Update to 5.7.29 to fix security issues

@@ -2,4 +2,3 @@ fix_hurd_kfreebsd.patch
 mysql-test-run-paths
 fix_grant_user_lock_as_root.patch
 disable_tests.patch
-year2020.patch
