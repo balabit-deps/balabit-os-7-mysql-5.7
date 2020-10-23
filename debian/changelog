@@ -1,3 +1,15 @@
+mysql-5.7 (5.7.32-0ubuntu0.18.04.1) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: Update to 5.7.32 to fix security issues
+    - CVE-2019-14775, CVE-2020-14672, CVE-2020-14760, CVE-2020-14765,
+      CVE-2020-14769, CVE-2020-14771, CVE-2020-14775, CVE-2020-14776,
+      CVE-2020-14789, CVE-2020-14790, CVE-2020-14793, CVE-2020-14812,
+      CVE-2020-14827, CVE-2020-14867, CVE-2020-14869
+  * Removed patch no longer needed with new version:
+    - debian/patches/disable_crl_tests.patch
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Fri, 23 Oct 2020 06:48:27 -0400
+
 mysql-5.7 (5.7.31-0ubuntu0.18.04.1) bionic-security; urgency=medium
 
   * SECURITY UPDATE: Update to 5.7.31 to fix security issues
