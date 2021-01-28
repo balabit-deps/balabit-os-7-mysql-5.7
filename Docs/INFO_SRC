@@ -1,7 +1,7 @@
-commit: e360e57bce944b6f4bb5230eb6bf9f7aad87ee71
-date: 2020-09-07 11:49:57 +0200
-build-date: 2020-09-23 12:00:25 +0000
-short: e360e57bce9
-branch: mysql-5.7.32-release
+commit: 83ab320020c1a4044e6bfd479a0ff2ae2370a9bc
+date: 2020-12-10 08:26:47 +0530
+build-date: 2020-12-10 03:02:16 +0000
+short: 83ab320020c
+branch: mysql-5.7.33-release
 
-MySQL source 5.7.32
+MySQL source 5.7.33
